@@ -6,15 +6,19 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class NinjaTrap : ClapTrap
+class NinjaTrap : public virtual ClapTrap
 {
-    NinjaTrap();
-    NinjaTrap(std::string p_name);
-    ~NinjaTrap();
-    void ninjaShoebox(ClapTrap &clap);
-    void ninjaShoebox(FragTrap &frag);
-    void ninjaShoebox(ScavTrap &frag);
-    void ninjaShoebox(NinjaTrap &frag);
+    public :
+        NinjaTrap();
+        NinjaTrap(std::string p_name);
+        ~NinjaTrap();
+        void ninjaShoebox(ClapTrap &clap);
+        void ninjaShoebox(FragTrap &frag);
+        void ninjaShoebox(ScavTrap &frag);
+        void ninjaShoebox(NinjaTrap &frag);
+        int get_maxenergypoints();
+        int get_energypoints();
+        int get_melee();
 
 
 };

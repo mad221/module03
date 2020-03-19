@@ -46,10 +46,25 @@ void NinjaTrap::ninjaShoebox(FragTrap &frag)
 
 void NinjaTrap::ninjaShoebox(NinjaTrap &ninja)
 {
-    std::cout << "Ninja " << name << std::endl; 
+    std::cout << "Ninja " << ninja.name << std::endl; 
 }
 
 void NinjaTrap::ninjaShoebox(ScavTrap &scav)
 {
     scav.his_hitpoints();
+}
+
+int NinjaTrap::get_maxenergypoints()
+{
+    return (maxEnergyPoints);
+}
+
+int NinjaTrap::get_energypoints()
+{
+    return (energyPoints);
+}
+
+int NinjaTrap::get_melee()
+{
+    return(meleeAttackDamage);
 }

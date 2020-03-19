@@ -2,8 +2,13 @@
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    this->hitPoints = maxHitPoints;
-    std::cout << "energie au max" << std::endl;
+    this->hitPoints += amount;
+    if (this->hitPoints >= maxHitPoints)
+    {
+        this->hitPoints = this->maxHitPoints;
+        std::cout << "energie au max" << std::endl;
+    }
+
 }
 
 void ClapTrap::takeDamage(unsigned int amount)

@@ -22,7 +22,7 @@ FragTrap::FragTrap() : Robot()
     std::cout << "default fragtrap create" << std::endl;
 }
 
-FragTrap::FragTrap(int p_hitpoints, int p_energypoints, int level, std::string p_name)
+FragTrap::FragTrap(int p_hitpoints, int p_energypoints, int p_level, std::string p_name)
 : Robot()
 {
     hitPoints = 100;
@@ -38,7 +38,7 @@ FragTrap::FragTrap(int p_hitpoints, int p_energypoints, int level, std::string p
     if (p_energypoints <= maxEnergyPoints && p_energypoints >= 0)
         energyPoints = p_energypoints;
     if (level >= 0)
-        level = level;
+        level = p_level;
     name = p_name;
     std::cout << "fragtrap custom create" << std::endl;
 }
@@ -64,4 +64,24 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
 void FragTrap::his_name()
 {
     std::cout << "his name is " << name << std::endl;
+}
+
+int FragTrap::get_hitpoints()
+{
+    return (this->hitPoints);
+}
+
+int FragTrap::get_maxhitpoints()
+{
+    return (maxHitPoints);
+}
+
+int FragTrap::get_ranged()
+{
+    return(rangedAttackDamage);
+}
+
+int FragTrap::get_armor()
+{
+    return (armorReductionDamage);
 }

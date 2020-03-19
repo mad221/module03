@@ -21,7 +21,7 @@ ScavTrap::~ScavTrap()
 }
 
 
-ScavTrap::ScavTrap(int p_hitpoints, int p_energypoints, int level, std::string p_name)
+ScavTrap::ScavTrap(int p_hitpoints, int p_energypoints, int p_level, std::string p_name)
 : Robot()
 {
 
@@ -38,7 +38,7 @@ ScavTrap::ScavTrap(int p_hitpoints, int p_energypoints, int level, std::string p
     if (p_energypoints <= maxEnergyPoints && p_energypoints >= 0)
         energyPoints = p_energypoints;
     if (level >= 0)
-        level = level;
+        level = p_level;
     name = p_name;
     std::cout << "ScavTrap custom create" << std::endl;
 }
