@@ -2,6 +2,14 @@
 
 Robot::Robot()
 {
+}
+
+Robot::~Robot()
+{
+}
+
+FragTrap::FragTrap() : Robot()
+{
     hitPoints = 100;
     maxHitPoints = 100;
     energyPoints = 100;
@@ -11,19 +19,11 @@ Robot::Robot()
     meleeAttackDamage = 30;
     rangedAttackDamage  = 20;
     armorReductionDamage = 5;
-}
-
-Robot::~Robot()
-{
-}
-
-FragTrap::FragTrap()
-{
     std::cout << "default fragtrap create" << std::endl;
 }
 
-
-Robot::Robot(int p_hitpoints, int p_energypoints, int level, std::string p_name)
+FragTrap::FragTrap(int p_hitpoints, int p_energypoints, int level, std::string p_name)
+: Robot()
 {
     hitPoints = 100;
     maxHitPoints = 100;
@@ -40,42 +40,12 @@ Robot::Robot(int p_hitpoints, int p_energypoints, int level, std::string p_name)
     if (level >= 0)
         level = level;
     name = p_name;
-}
-
-
-FragTrap::FragTrap(int p_hitpoints, int p_energypoints, int level, std::string p_name)
-: Robot(p_hitpoints, p_energypoints, level, p_name)
-{
     std::cout << "fragtrap custom create" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
     std::cout << "FragTrap delete" << std::endl;
-}
-
-void FragTrap::beRepaired(unsigned int amount)
-{
-    this->hitPoints = maxHitPoints;
-    std::cout << "energie au max" << std::endl;
-}
-
-void FragTrap::takeDamage(unsigned int amount)
-{
-    this->hitPoints += (this->armorReductionDamage - amount) ;
-    if (this->hitPoints < 0)
-        this->hitPoints = 0;
-    std::cout << "take damage" << std::endl;
-}
-
-void FragTrap::rangedAttack(std::string const &target)
-{
-    std::cout << name << " attaque " << target << " a distance causant " << rangedAttackDamage << " degat" << std::endl;
-}
-
-void FragTrap::meleeAttack(std::string const &target)
-{
-    std::cout << name << " attaque " << target << " en melee causant " << armorReductionDamage << " degat" << std::endl;
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const &target)

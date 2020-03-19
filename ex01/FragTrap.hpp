@@ -9,8 +9,7 @@ class Robot
     public:
         Robot();
         ~Robot();
-        Robot(int p_hitpoints, int p_energypoints, int level, std::string p_name);
-
+            
     protected:
         int hitPoints;
         int maxHitPoints;
